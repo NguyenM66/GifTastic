@@ -36,13 +36,14 @@ function renderGifs(somethingToRender) {
 			if(results[i].rating !== "r") {
 				//var individualDiv = $("<div>");
 				var gifDiv = $("<div>");
-				var p = $("<p>");
+				var h = $("<h3>");
 				var animalImage = $("<img>");
 
 				gifDiv.addClass("imgBlock");
+				gifDiv.attr("style", "position: relative");
 
-				p.text("Rating: " + results[i].rating);
-				p.attr("style", "position: absolute; top: 50px; left: 0; width: 25%");
+				h.text("Rating: " + results[i].rating);
+				h.attr("style", "position: absolute; top: 75px; right: 150px; width: 25%");
 
 				animalImage.attr("id", response.data[i].id);
 				console.log(response.data[i].id);
@@ -50,14 +51,15 @@ function renderGifs(somethingToRender) {
 				animalImage.attr("data-state", "still")
 				animalImage.attr("data-still", results[i].images.fixed_height_still.url);
 				animalImage.attr("data-animate", results[i].images.fixed_height.url);
-				animalImage.attr("style", "position: relative; width: 25%; float: left; margin: 0px 15px 15px 0px;")
+				animalImage.attr("style", "position: relative; width: 25%; margin: 0px 15px 15px 0px;")
 				animalImage.addClass("img-rounded gif");
 
-				gifDiv.append(p);
+				
 				gifDiv.append(animalImage);
+				gifDiv.append(h);
 
 				//$(".imgBlock").prepend(gifDiv);
-				$("#gifSec").prepend(gifDiv);	
+				$("#gifSec").append(gifDiv);	
 
 			}
 		}
