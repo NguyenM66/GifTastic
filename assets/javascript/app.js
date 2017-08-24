@@ -19,7 +19,7 @@ function renderButtons() {
 
 //put into function
 function renderGifs(somethingToRender) {
-	var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + somethingToRender + "&api_key=c066173623944c50bb52242ce1a34f07&limit=10";
+	var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=c066173623944c50bb52242ce1a34f07&q="+somethingToRender+"&limit=10";
 	$("#gifSec").empty();
 
 	$.ajax({
